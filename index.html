@@ -4,8 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Book</title>
+    <style>
+        .Container{
+            border: 2px solid black;
+            border-radius: 20px;
+            height: 400px;
+            width: 350px;
+            margin-left: 600px;
+            margin-top: 70px;
+            background-color: blanchedalmond;   
+        }
+        h1{
+            font-family: fantasy;
+            text-align: center;
+            margin-top: 100px;
+        }
+        #search{
+            margin-left: 50px;
+        }
+        #result{
+            text-align: center;
+            margin-top: 25px;
+        }
+        #Btn{
+            background-color: saddlebrown;
+            color: white;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="Container">
+        <h1>Contact Book 📞</h1>
+        <input type="text" id="search" placeholder="Search....">
+        <button type="button" onclick="search()" id="Btn">Search</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const contacts = {
+            tosif: "8421886407",
+            arbaj: "9307230400",
+            suraj: "7358005827",
+            kunal: "5892146045",
+            ranjit: "8528798924",
+        }
+        function search(){
+            const searchInput = document.getElementById("search");
+            const query = searchInput.value.toLowerCase();
+            const mobile = contacts[query]
+            
+            const result = document.getElementById("result");
+            
+            if(mobile){
+                result.innerText = `Mobile number of ${query} is ${mobile}`;
+            }
+            else{
+                result.innerText = `Concat Not Found`;
+            }
+        }
+    </script>
 </body>
 </html>
