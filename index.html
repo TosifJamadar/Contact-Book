@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Book</title>
+    <title>Dictionary Word</title>
     <style>
         .Container{
             border: 2px solid black;
@@ -12,7 +12,7 @@
             width: 350px;
             margin-left: 600px;
             margin-top: 70px;
-            background-color: blanchedalmond;   
+            background-color: #a3a3c2;   
         }
         h1{
             font-family: fantasy;
@@ -28,39 +28,39 @@
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         }
         #Btn{
-            background-color: saddlebrown;
+            background-color: #33334d;
             color: white;
         }
     </style>
 </head>
 <body>
     <div class="Container">
-        <h1>Contact Book 📞</h1>
+        <h1>Dictionary Word📖</h1>
         <input type="text" id="search" placeholder="Search....">
         <button type="button" onclick="search()" id="Btn">Search</button>
         <p id="result"></p>
     </div>
 
     <script>
-        const contacts = {
-            tosif: "8421886407",
-            arbaj: "9307230400",
-            suraj: "7358005827",
-            kunal: "5892146045",
-            ranjit: "8528798924",
+        const dictionary = {
+            apple: "सेब 🍎",
+            orange: "संतरा 🍊",
+            mango: "आम 🥭 ",
+            pineapple: "अनन्‍नास 🍍",
+            grape: "अंगूर 🍇",
         }
         function search(){
             const searchInput = document.getElementById("search");
             const query = searchInput.value.toLowerCase();
-            const mobile = contacts[query]
+            const Meaning = dictionary[query]
             
             const result = document.getElementById("result");
             
-            if(mobile){
-                result.innerText = `Mobile number of ${query} is ${mobile}`;
+            if(Meaning){
+                result.innerText = `Meaning of ${query} The is ${Meaning}`;
             }
             else{
-                result.innerText = `Concat Not Found`;
+                result.innerText = `Word ${query} Not Found in The dictionary`;
             }
         }
     </script>
